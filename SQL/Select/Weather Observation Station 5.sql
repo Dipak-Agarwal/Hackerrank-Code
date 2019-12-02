@@ -35,3 +35,7 @@ FROM STATION
 WHERE LENGTH(CITY) = (SELECT MIN(LENGTH(CITY)) FROM STATION) 
 ORDER BY CITY ) 
 WHERE ROWNUM <= 1 ;
+
+MySQL
+select city, length(city) from station where length(city) = (select min(length(city)) from station) order by city limit 1;
+select city, length(city) from station where length(city) = (select max(length(city)) from station) order by city limit 1
